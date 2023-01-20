@@ -11,7 +11,7 @@ public class ReadBooks {
         sc.close();
     }
 
-    private void readBook() {
+    private Book createBook() {
         String name;
         int pages;
         System.out.println("Podaj tytuł");
@@ -19,17 +19,17 @@ public class ReadBooks {
         System.out.println("Podaj liczbę stron");
         pages = sc.nextInt();
         sc.nextLine();
-        library.addBook(new Book(name, pages));
-
+        return new Book(name, pages);
     }
 
-    public void addToLibrary() {
+    public void fillBooks() {
         System.out.println("Podaj unikalne książki");
 
         do {
-            readBook();
+            Book book = createBook();
+            library.addBook(book);
 
-        } while (library.outOfSpace());
+        } while (library.hasSpace());
         close();
 
     }

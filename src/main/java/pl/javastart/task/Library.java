@@ -14,14 +14,14 @@ public class Library {
         }
     }
 
-    boolean outOfSpace() {
+    boolean hasSpace() {
         return (bookNo < LIBRARY_SIZE);
     }
 
     private boolean bookExists(Book book) {
         boolean exists = false;
-        for (Book book1 : books) {
-            exists = book.equals(book1);
+        for (int i = 0; i < bookNo; i++) {
+            exists = book.equals(books[i]);
             if (exists) {
                 System.out.println("Książka już stoi na półce.");
                 break;
