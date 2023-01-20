@@ -3,7 +3,7 @@ package pl.javastart.task;
 import java.util.Scanner;
 
 public class ReadBooks {
-    
+
     private Scanner sc = new Scanner(System.in);
     private Library library = new Library();
 
@@ -32,5 +32,12 @@ public class ReadBooks {
         } while (library.outOfSpace());
         close();
 
+    }
+
+    public void printLibrary() {
+        System.out.println("Książki w biblioteczce:");
+        for (Book book : library.getBooks()) {
+            System.out.println(book);
+        }
     }
 }

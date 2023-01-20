@@ -30,4 +30,7 @@ public class Library {
         return exists;
     }
 
+    public Book[] getBooks() {
+        return books;
+    }
 }

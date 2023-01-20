@@ -43,4 +43,12 @@ public class Book {
     public int hashCode() {
         return Objects.hash(title, pages);
     }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "title='" + title + '\'' +
+                ", pages=" + pages +
+                '}';
+    }
 }
